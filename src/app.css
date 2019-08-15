@@ -1,0 +1,373 @@
+/* html {
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.4rem;
+} */
+html,body{
+    width:100%;
+    height:100%;
+    font-size: 16px;
+}
+html,body,ul ,li ,p,span {
+    margin: 0;
+    padding: 0;
+} 
+.input {
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+button {
+    height: 35px;
+    font-size: 20px;
+}
+ul {
+    overflow: hidden;
+}
+ul li {
+    list-style-type: none;
+}
+.my-li  {
+    height: 30px;
+}
+.my-span {
+    width: 50px;
+    height: 25px;
+    background: #1890ff;
+    border-radius: 10px;
+    margin: 0px 25px;
+}
+.my-lsi li:nth-child(odd) {
+    float: left;
+    width: 200px;
+}
+ul li span {
+    display: inline-table;
+    float: left;
+}
+.list-input button{
+    cursor:pointer;
+}
+.show {
+     display: block;
+    opacity: 1;
+    transition: all 1.5s ease-in;
+}
+.hide {
+    display: none;
+    opacity: 0;
+    transition: all 1.5s ease-in;
+}
+.show1 {
+    display: block;
+    animation: show-item 2s ease-in forwards;
+}
+.hide1 {
+    display: none;
+    animation: hide-item 2s ease-in forwards;
+}
+@keyframes hide-item {
+    0% {
+        opacity: 1;
+        color: yellow;
+    }
+    50% {
+        opacity: 0.5;
+        color: red;
+    }
+
+    100% {
+        opacity: 0;
+        color: green;
+    }
+}
+
+@keyframes show-item {
+    0% {
+        opacity: 0;
+        color: yellow;
+    }
+    50% {
+        opacity: 0.5;
+        color: red;
+    }
+    100% {
+        opacity: 1;
+        color: green;
+    }
+}
+.boss-text-enter {
+    opacity: 0;
+}
+.boss-text-enter-active {
+    opacity: 1;
+    transition: opacity 2000ms;
+}
+.boss-text-enter-done {
+    opacity: 1;
+}
+.boss-text-exit {
+    opacity: 1;
+}
+.boss-text-exit-active {
+    opacity: 0;
+    transition: opacity 2000ms;
+}
+.boss-text-exit-done {
+    opacity: 0;
+}
+/* 
+css
+
+一、背景：
+background-color:颜色
+background-image:图片
+background-repeat:平铺
+background-attachment:固定
+background-position:起始位置
+
+二、文本：
+color：文本颜色
+direction：文本方向
+letter-spacing：字符间距
+line-height：行高
+text-align：对齐
+text-decoration：文本添加修饰
+text-indent：首行缩进
+text-shadow：设置文本阴影
+text-transform：控制元素字母
+unicode-bidi：设置或返回文本是否被重写
+vertical-align：垂直对齐
+white-space：设置元素中空白的处理方式
+word-spacing：设置字间距
+
+三、字体：
+font：所有字体
+font-family：字体系列
+font-size：字体大小
+font-style：字体样式
+ont-variant：以小型大写字体或者正常字体显示文本
+font-weight：字体粗细
+
+四、链接：
+a:link    未访问的链接 
+a:visited 已访问的链接 
+a:hover   鼠标划过链接 
+a:active  已选中的链接
+
+五、列表：ul(li)
+list-style：简写
+list-style-image： 将图象设置为列表项标志
+list-style-position： 设置列表中列表项标志的位置
+list-style-type：设置列表项标志的类型
+
+六、表格
+table td th
+
+七、盒子模型
+margin border padding content
+
+八、边框
+border： 简写属性，用于把针对四个边的属性设置在一个声明
+border-style： 用于设置元素所有边框的样式，或者单独地为各边设置边框样式
+border-width： 简写属性，用于为元素的所有边框设置宽度，或者单独地为各边边框设置宽度
+border-color： 简写属性，设置元素的所有边框中可见部分的颜色，或为 4 个边分别设置颜色
+border-bottom： 简写属性，用于把下边框的所有属性设置到一个声明中
+border-bottom-color： 设置元素的下边框的颜色
+border-bottom-style： 设置元素的下边框的样式
+border-bottom-width： 设置元素的下边框的宽度
+border-left： 简写属性，用于把左边框的所有属性设置到一个声明中
+border-left-color： 设置元素的左边框的颜色
+border-left-style： 设置元素的左边框的样式
+border-left-width： 设置元素的左边框的宽度
+border-right： 简写属性，用于把右边框的所有属性设置到一个声明中
+border-right-color： 设置元素的右边框的颜色
+border-right-style： 设置元素的右边框的样式
+border-right-width： 设置元素的右边框的宽度
+border-top： 简写属性，用于把上边框的所有属性设置到一个声明中
+border-top-color： 设置元素的上边框的颜色
+border-top-style： 设置元素的上边框的样式
+border-top-width： 设置元素的上边框的宽度
+
+九、轮廓(outline)
+outline： 在一个声明中设置所有的轮廓属性 outline-color outline-style outline-width inherit
+outline-color： 设置轮廓的颜色 color-name hex-number rgb-number invert inherit
+outline-style： 设置轮廓的样式 none dotted dashed solid double groove ridge inset outset inherit
+outline-width： 设置轮廓的宽度 thin medium thick length inherit
+
+十、分组和嵌套选择器
+p{}  .class p {}
+
+十一、尺寸 (Dimension)
+height： 设置元素的高度
+line-height： 设置行高
+max-height： 设置元素的最大高度
+max-width： 设置元素的最大宽度
+min-height： 设置元素的最小高度
+min-width： 设置元素的最小宽度
+width： 设置元素的宽度
+
+十二、Display(显示) 与 Visibility(可见性)
+
+十三、Position(定位)
+bottom： 定义了定位元素下外边距边界与其包含块下边界之间的偏移。 auto length % inherit
+clip： 剪辑一个绝对定位的元素 shape auto inherit
+cursor： 显示光标移动到指定的类型 url auto crosshair default pointer move e-resize ne-resize nw-resize n-resize se-resize sw-resize s-resize w-resize text wait help
+left： 定义了定位元素左外边距边界与其包含块左边界之间的偏移。 auto length % inherit
+overflow： 设置当元素的内容溢出其区域时发生的事情。 auto hidden scroll visible inherit
+overflow-y： 指定如何处理顶部/底部边缘的内容溢出元素的内容区域 auto hidden scroll visible no-display no-content
+overflow-x： 指定如何处理右边/左边边缘的内容溢出元素的内容区域 auto hidden scroll visible no-display no-content
+position： 指定元素的定位类型 absolute fixed relative static inherit
+right： 定义了定位元素右外边距边界与其包含块右边界之间的偏移。 auto length % inherit
+top： 定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。 auto length % inherit
+z-index： 设置元素的堆叠顺序 number auto inherit
+
+十四、布局 - Overflow
+visible： 默认值。内容不会被修剪，会呈现在元素框之外。 
+hidden： 内容会被修剪，并且其余内容是不可见的。 
+scroll： 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。 
+auto： 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。 
+inherit： 规定应该从父元素继承 overflow 属性的值。
+
+十五、Float(浮动)
+clear 指定不允许元素周围有浮动元素。 left right both none inherit 
+float 指定一个盒子（元素）是否可以浮动。 left right none inherit
+
+十六、布局 - 水平 & 垂直对齐
+元素居中对齐：margin: auto;
+文本居中对齐：text-align: center;
+左右对齐 - 使用定位方式：position: absolute;
+左右对齐 - 使用 float 方式;
+垂直居中对齐 - 使用 padding;
+垂直居中 - 使用 line-height;
+垂直居中 - 使用 position 和 transform;
+
+十七、组合选择符
+后代选择器：div p {};
+子元素选择器：div>p {};
+相邻兄弟选择器：div+p {};
+后续兄弟选择器:div~p {};
+
+十八、伪类(Pseudo-classes)
+:checked input:checked 选择所有选中的表单元素
+:disabled input:disabled 选择所有禁用的表单元素
+:empty p:empty 选择所有没有子元素的p元素
+:enabled input:enabled 选择所有启用的表单元素
+:first-of-type p:first-of-type 选择的每个 p 元素是其父元素的第一个 p 元素
+:in-range input:in-range 选择元素指定范围内的值
+:invalid input:invalid 选择所有无效的元素
+:last-child p:last-child 选择所有p元素的最后一个子元素
+:last-of-type p:last-of-type 选择每个p元素是其母元素的最后一个p元素
+:not(selector):not(p) 选择所有p以外的元素
+:nth-child(n) p:nth-child(2) 选择所有 p 元素的父元素的第二个子元素
+:nth-last-child(n) p:nth-last-child(2) 选择所有p元素倒数的第二个子元素
+:nth-last-of-type(n) p:nth-last-of-type(2) 选择所有p元素倒数的第二个为p的子元素
+:nth-of-type(n) p:nth-of-type(2) 选择所有p元素第二个为p的子元素
+:only-of-type p:only-of-type 选择所有仅有一个子元素为p的元素
+:only-child p:only-child 选择所有仅有一个子元素的p元素
+:optional input:optional 选择没有"required"的元素属性:out-of-range input
+:out-of-range 选择指定范围以外的值的元素属性
+:read-only input:read-only 选择只读属性的元素属性
+:read-write input:read-write 选择没有只读属性的元素属性
+:required input:required 选择有"required"属性指定的元素属性
+:root root 选择文档的根元素
+:target #news:target 选择当前活动#news元素(点击URL包含锚的名字)
+:valid input:valid 选择所有有效值的属性
+:link a:link 选择所有未访问链接
+:visited a:visited 选择所有访问过的链接
+:active a:active 选择正在活动链接
+:hover a:hover 把鼠标放在链接上的状态
+:focus input:focus 选择元素输入后具有焦点
+:first-letter p:first-letter 选择每个<p>元素的第一个字母
+:first-line p:first-line 选择每个<p>元素的第一行
+:first-child p:first-child 选择器匹配属于任意元素的第一个子元素的 <p>元素
+:before p:before 在每个<p>元素之前插入内容
+:after p:after 在每个<p>元素之后插入内容
+:lang(language) p:lang(it) 为<p>元素的lang属性选择一个开始值
+
+十九、伪元素
+:link a:link 选择所有未访问链接
+:visited a:visited 选择所有访问过的链接
+:active a:active 选择正在活动链接
+:hover a:hover 把鼠标放在链接上的状态
+:focus input:focus 选择元素输入后具有焦点
+:first-letter p:first-letter 选择每个<p>元素的第一个字母
+:first-line p:first-line 选择每个<p>元素的第一行
+:first-child p:first-child 选择器匹配属于任意元素的第一个子元素的 <]p>元素
+:before p:before 在每个<p>元素之前插入内容
+:after p:after 在每个<p>元素之后插入内容
+:lang(language) p:lang(it) 为<p>元素的lang属性选择一个开始值
+
+二十、透明/不透明
+opacity=1 
+IE8和更早版本使用： filter:alpha(opacity=100)
+
+二十一、 媒体类型
+@media 规则
+all 用于所有的媒体设备。 
+aural 用于语音和音频合成器。 
+braille 用于盲人用点字法触觉回馈设备。 
+embossed 用于分页的盲人用点字法打印机。 
+handheld 用于小的手持的设备。 
+print 用于打印机。 
+projection 用于方案展示，比如幻灯片。 
+screen 用于电脑显示器。 
+tty 用于使用固定密度字母栅格的媒体，比如电传打字机和终端。 
+tv 用于电视机类型的设备。
+
+二十二、属性 选择器
+*=,
+|=,
+^=,
+$=,
+*=
+
+二十三、表单
+
+二十四、计数器
+content 使用 ::before 和 ::after 伪元素来插入自动生成的内容
+counter-increment 递增一个或多个值 
+counter-reset 创建或重置一个或多个计数器
+
+二十五、 网页布局
+
+二十六、
+
+css3
+
+一、 边框
+border-image 设置所有边框图像的速记属性。 
+border-radius 一个用于设置所有四个边框- *-半径属性的速记属性 
+box-shadow 附加一个或多个下拉框的阴影
+
+二、圆角
+border-radius 所有四个边角 border-*-*-radius 属性的缩写 
+border-top-left-radius 定义了左上角的弧度 
+border-top-right-radius 定义了右上角的弧度 
+border-bottom-right-radius 定义了右下角的弧度 
+border-bottom-left-radius 定义了左下角的弧度
+
+三、背景
+background-clip 规定背景的绘制区域。
+background-origin 规定背景图片的定位区域。
+background-size 规定背景图片的尺寸。
+
+四、渐变
+background: linear-gradient radial-gradient repeating-linear-gradient repeating-radial-gradient
+
+五、文本效果
+text-shadow box-shadow text-overflow word-wrap word-break
+
+六、字体
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_bold.woff);
+    font-weight: bold;
+}
+
+七、2d
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+八、3d
+*/  
